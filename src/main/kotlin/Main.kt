@@ -1,5 +1,7 @@
 package org.example
 
 fun main() {
-    println("Hello World!")
+    val consola = GestorEntradaSalida()
+    val generador = GeneradorSecuencias(consola)
+    generador.mostrarSec()
 }
