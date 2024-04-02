@@ -1,7 +1,13 @@
 package org.example
 
 fun main() {
-    val consola = GestorEntradaSalida()
-    val generador = GeneradorSecuencias(consola)
-    generador.mostrarSec()
+    try{
+        val consola = GestorEntradaSalida()
+        val generador = GeneradorSecuencias(consola)
+        val menuPrincipal = Menu(consola, generador)
+        menuPrincipal.ejecutar()
+    }
+    catch(e:Exception){
+        println(e.message)
+    }
 }

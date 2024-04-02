@@ -12,9 +12,24 @@ class GestorEntradaSalida:IGestorEntradaSalida {
         }
     }
 
+    override fun entradaMenu(): Int {
+        while (true) {
+            mostrarTexto("Opcion -> ")
+            val entrada = readln().toIntOrNull()
+            if (entrada is Int && entrada in 1..3) return entrada
+        }
+    }
 
-    override fun mostrarTexto(texto :String, espacio: Boolean){
-        if (espacio) println(texto)
+
+    override fun mostrarTexto(texto :String, salto: Boolean){
+        if (salto) println(texto)
         else print(texto)
+    }
+
+    override fun limpiarConsola() {
+        Thread.sleep(1000)
+        repeat(15){
+            mostrarTexto("", true)
+        }
     }
 }

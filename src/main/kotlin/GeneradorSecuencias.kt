@@ -2,14 +2,14 @@ package org.example
 
 class GeneradorSecuencias(val consola: IGestorEntradaSalida):IGeneradorSecuencias {
     private lateinit var sec : Sequence<String>
-    private val secuenciaSinEspacio = mutableListOf<String>()
+    private val secuenciaIncremental = mutableListOf<String>()
     private val secuenciaFinal = mutableListOf<String>()
 
     override fun fraseIncremental(numero:Int){
         sec = lineSequence(numero)
         sec.forEach {
-            secuenciaSinEspacio.add(it)
-            consola.mostrarTexto(secuenciaSinEspacio.joinToString(" "), true)
+            secuenciaIncremental.add(it)
+            consola.mostrarTexto(secuenciaIncremental.joinToString(" "), true)
         }
     }
 
